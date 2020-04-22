@@ -2,17 +2,17 @@
 <html>
 
 <head>
-    
-<script data-ad-client="ca-pub-1369313608898671" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-    
-<ins class="kakao_ad_area" style="display:none;" 
- data-ad-unit    = "DAN-1jewlpgr7wn5h" 
- data-ad-width   = "320" 
- data-ad-height  = "100"></ins> 
-<script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script>
+
+    <script data-ad-client="ca-pub-1369313608898671" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+    <ins class="kakao_ad_area" style="display:none;" data-ad-unit="DAN-1jewlpgr7wn5h" data-ad-width="320" data-ad-height="100"></ins>
+    <script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Go to www.addthis.com/dashboard to customize your tools -->
+    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5e9fcde5bc775227"></script>
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
@@ -68,11 +68,9 @@
             <p class="result-message"></p>
             <div id="label-container"></div>
             <div class="image-title-wrap">
-                
 
                 <!-- Go to www.addthis.com/dashboard to customize your tools -->
-                <div class="addthis_inline_share_toolbox_r9qm"></div>
-            
+                <div class="addthis_inline_share_toolbox_viux"></div>
                 <button type="button" onclick="removeUpload()" class="remove-image">다른 사진으로 재시도
 
                 </button>
@@ -120,11 +118,10 @@
                     $('.file-upload-content').show();
                     $('.image-title').html(input.files[0].name);
                 };
-            var resultMessege;
-                {
-             resultMessege = "AI가 당신의 얼굴을 분석중입니다...";
+                var resultMessege; {
+                    resultMessege = "AI가 당신의 얼굴을 분석중입니다...";
                 }
-             $('.result-message').html(resultMessege);
+                $('.result-message').html(resultMessege);
                 reader.readAsDataURL(input.files[0]);
                 init().then(() => {
                     predict()
@@ -177,13 +174,13 @@
             var resultMessege;
             switch (prediction[0].className) {
                 case "잘생김":
-                    resultMessege = "당신의 외모는 상위 " + Math.floor(((1 - prediction[0].probability) * 100+1)) + "% 입니다."
+                    resultMessege = "당신의 외모는 상위 " + Math.floor(((1 - prediction[0].probability) * 100 + 1)) + "% 입니다."
                     break;
                 case "못생김":
                     resultMessege = "당신의 외모는 상위 " + Math.floor(((0 + prediction[0].probability) * 100)) + "% 입니다."
                     break;
                 case "보통":
-                   resultMessege = "당신의 외모는 상위 " + Math.floor(((3 + prediction[0].probability) * 10)) + "% 입니다."
+                    resultMessege = "당신의 외모는 상위 " + Math.floor(((3 + prediction[0].probability) * 10)) + "% 입니다."
                     break;
             }
             $('.result-message').html(resultMessege);
