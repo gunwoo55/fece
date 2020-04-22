@@ -2,6 +2,11 @@
 <html>
 
 <head>
+<ins class="kakao_ad_area" style="display:none;" 
+ data-ad-unit    = "DAN-to1sdtv5bfhv" 
+ data-ad-width   = "320" 
+ data-ad-height  = "100"></ins> 
+<script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script>
 <!-- Go to www.addthis.com/dashboard to customize your tools -->
 <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5e9fcde5bc775227"></script>
 
@@ -115,6 +120,11 @@
                     $('.file-upload-content').show();
                     $('.image-title').html(input.files[0].name);
                 };
+            var resultMessege;
+                {
+             resultMessege = "AI가 당신의 얼굴을 분석중입니다...";
+                }
+             $('.result-message').html(resultMessege);
                 reader.readAsDataURL(input.files[0]);
                 init().then(() => {
                     predict()
@@ -173,7 +183,7 @@
                     resultMessege = "당신의 외모는 상위 " + Math.floor(((0 + prediction[0].probability) * 100)) + "% 입니다."
                     break;
                 case "보통":
-                    resultMessege = "당신의 외모는 상위 50% 입니다."
+                   resultMessege = "당신의 외모는 상위 " + Math.floor(((3 + prediction[0].probability) * 10)) + "% 입니다."
                     break;
             }
             $('.result-message').html(resultMessege);
